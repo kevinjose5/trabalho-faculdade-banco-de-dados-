@@ -1,0 +1,105 @@
+*{
+    font-family: "Roboto", sans-serif;  
+    font-style: normal;  
+    background-color:rgb(50, 53, 53);
+    color: aqua;
+}
+
+
+
+/* formatação da parte do cabeçalho */
+#titulo{
+
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    column-gap:30px;
+}
+.secaousando{
+    color: rgb(1, 159, 159);
+}
+#titulo h1{
+font-size: 14px;
+font-weight: 400;
+
+}
+#titulo a{
+    text-decoration: none;
+}
+
+#titulo a:hover{
+    text-decoration: underline;
+    scale: 1.15;
+}
+#titulopag{
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-weight: 300;
+    
+}
+header{
+    border-bottom: 2px solid rgb(134, 162, 166);
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* formatação do formulario */
+
+#secaoformulario{
+ 
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    
+
+
+}
+
+
+/* formatação dos inputs */
+input{
+ 
+    border: 0;
+    background-color: rgb(101, 102, 98);
+    border-radius: 30px;
+
+}
+#NF{
+    width: 90px;
+}
+#chave{
+    width: 400px;
+}
+#material{
+    width: 400px;
+}
+#obra{
+    width: 300px;
+}
+#valor{
+    width: 90;
+}
+
+/* fim da configuração dos inputs */
+
+
+a{
+    text-decoration: none;
+}
+
+/*configurar botão do cadastro do material */
+#adicionar_material{
+    margin-top: 50px;
+}
+
+.caixa{
+    display: flex;
+    flex-direction: row;
+}
