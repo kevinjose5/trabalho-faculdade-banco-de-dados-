@@ -85,19 +85,17 @@ if($obr== null ){
     $obr="";
 }   
 
-// "SELECT nfiscal.idnota, nfiscal.obra, nfiscal.chave, nfiscal.notafiscal, FORMAT(SUM(material.total),2 ) as valort 
-// FROM material INNER JOIN nfiscal on (nfiscal.idnota=material.idnota) 
-//  WHERE nfiscal.obra LIKE '$obr%'
-//  GROUP BY nfiscal.idnota, nfiscal.obra ";
 
 
-$sql_code ="SELECT nfiscal.obra AS OBR, FORMAT(SUM(tabelat.valort),2) as total FROM nfiscal 
+
+$sql_code ="SELECT nfiscal.obra AS OBR, FORMAT(tabelat.valort,2) as total FROM nfiscal 
 JOIN 
-(SELECT nfiscal.idnota, nfiscal.obra, nfiscal.chave, nfiscal.notafiscal, FORMAT(SUM(material.total),2 ) as valort
- FROM material INNER JOIN nfiscal on (nfiscal.idnota=material.idnota) GROUP BY nfiscal.idnota, nfiscal.obra) tabelat 
- ON nfiscal.obra=tabelat.obra 
- WHERE nfiscal.obra LIKE '$obr%'
- GROUP BY nfiscal.obra ";
+(SELECT nfiscal.idnota, nfiscal.obra, nfiscal.chave, nfiscal.notafiscal, SUM(material.total ) as valort FROM material 
+INNER JOIN nfiscal on (nfiscal.idnota=material.idnota) 
+GROUP BY nfiscal.obra) tabelat 
+ON nfiscal.obra=tabelat.obra 
+WHERE nfiscal.obra LIKE '$obr%'
+GROUP BY nfiscal.obra ";
 
 
 
